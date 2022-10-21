@@ -159,6 +159,9 @@ public class PrimeNumberServiceImpl implements PrimeNumberService {
 		if (endValue <= 0) {
 			responseBean.setMessage("Please enter natural numbers ");
 			return responseBean;
+		}else if(endValue > 1000000000) {
+			responseBean.setMessage("Please enter values less than 10^9");
+			return responseBean;
 		}
 		String algorithmValue = requestBean.getAlgorithmName();
 		
