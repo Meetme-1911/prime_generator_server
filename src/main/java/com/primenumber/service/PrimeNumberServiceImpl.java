@@ -31,11 +31,16 @@ public class PrimeNumberServiceImpl implements PrimeNumberService {
 			responseBean.setMessage("Please enter natural numbers ");
 			return responseBean;
 		} else {
+			
 			if (startValue > endValue) {
 				responseBean.setMessage("Starting number should be less than ending value");
 				return responseBean;
 			}else if(startValue == endValue){
 				responseBean.setMessage("Please enter different values for start and end point");
+				return responseBean;
+			}
+			else if(startValue > 1000000000 || endValue > 1000000000) {
+				responseBean.setMessage("Please enter values less than 10^9 ");
 				return responseBean;
 			}
 		}
